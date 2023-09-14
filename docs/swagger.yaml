@@ -1,0 +1,76 @@
+definitions:
+  main.H:
+    additionalProperties: true
+    type: object
+info:
+  contact: {}
+paths:
+  /createFile:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: The filename
+        in: query
+        name: filename
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/main.H'
+  /deleteFile:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: The filename
+        in: query
+        name: filename
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: File deleted successfully
+          schema:
+            type: string
+  /helloworld:
+    get:
+      consumes:
+      - application/json
+      description: do ping
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+  /updateFileName:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: The filename
+        in: query
+        name: filename
+        required: true
+        type: string
+      - description: The new filename
+        in: query
+        name: newFilename
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: File name updated successfully
+          schema:
+            type: string
+swagger: "2.0"
