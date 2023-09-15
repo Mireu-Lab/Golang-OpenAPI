@@ -5,4 +5,4 @@ WORKDIR /app
 
 COPY . .
 
-CMD [ "go", "run", "sample.go" ]
+CMD [ "./run/sample" ]
