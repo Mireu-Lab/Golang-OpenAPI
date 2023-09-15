@@ -2,6 +2,9 @@ definitions:
   main.H:
     additionalProperties: true
     type: object
+  src.H:
+    additionalProperties: true
+    type: object
 info:
   contact: {}
 paths:
@@ -21,7 +24,7 @@ paths:
         "200":
           description: Success
           schema:
-            $ref: '#/definitions/main.H'
+            $ref: '#/definitions/src.H'
   /deleteFile:
     delete:
       consumes:
@@ -51,6 +54,15 @@ paths:
           description: OK
           schema:
             type: string
+  /protected:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - '"BasicAuth"': []
   /updateFileName:
     put:
       consumes:

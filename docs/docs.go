@@ -36,7 +36,7 @@ const docTemplate = `{
                     "200": {
                         "description": "Success",
                         "schema": {
-                            "$ref": "#/definitions/main.H"
+                            "$ref": "#/definitions/src.H"
                         }
                     }
                 }
@@ -88,6 +88,22 @@ const docTemplate = `{
                 }
             }
         },
+        "/protected": {
+            "get": {
+                "security": [
+                    {
+                        "\"BasicAuth\"": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {}
+            }
+        },
         "/updateFileName": {
             "put": {
                 "consumes": [
@@ -125,6 +141,10 @@ const docTemplate = `{
     },
     "definitions": {
         "main.H": {
+            "type": "object",
+            "additionalProperties": true
+        },
+        "src.H": {
             "type": "object",
             "additionalProperties": true
         }

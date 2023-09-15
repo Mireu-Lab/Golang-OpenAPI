@@ -25,7 +25,7 @@
                     "200": {
                         "description": "Success",
                         "schema": {
-                            "$ref": "#/definitions/main.H"
+                            "$ref": "#/definitions/src.H"
                         }
                     }
                 }
@@ -77,6 +77,22 @@
                 }
             }
         },
+        "/protected": {
+            "get": {
+                "security": [
+                    {
+                        "\"BasicAuth\"": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {}
+            }
+        },
         "/updateFileName": {
             "put": {
                 "consumes": [
@@ -114,6 +130,10 @@
     },
     "definitions": {
         "main.H": {
+            "type": "object",
+            "additionalProperties": true
+        },
+        "src.H": {
             "type": "object",
             "additionalProperties": true
         }
