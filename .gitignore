@@ -1,0 +1,6 @@
+dataset_dir/
+*_image/
+.ipynb_checkpoints/
+*-checkpoint.*
+*.tar.*
+*.zip.*
