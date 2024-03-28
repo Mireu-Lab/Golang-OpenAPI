@@ -1,8 +1,14 @@
 {
+    "schemes": {{ marshal .Schemes }},
     "swagger": "2.0",
     "info": {
-        "contact": {}
+        "description": "{{escape .Description}}",
+        "title": "{{.Title}}",
+        "contact": {},
+        "version": "{{.Version}}"
     },
+    "host": "{{.Host}}",
+    "basePath": "{{.BasePath}}",
     "paths": {
         "/createFile": {
             "post": {

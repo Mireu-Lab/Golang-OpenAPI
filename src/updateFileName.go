@@ -15,7 +15,7 @@ import (
 // @Param newFilename query string true "The new filename"
 // @Success 200 {string} string "File name updated successfully"
 // @Router /updateFileName [put]
-func updateFileName(g *gin.Context) {
+func UpdateFileName(g *gin.Context) {
 	filename := g.Query("filename")
 	newFilename := g.Query("newFilename")
 

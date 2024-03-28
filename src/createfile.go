@@ -14,7 +14,7 @@ import (
 // @Param filename query string true "The filename"
 // @Success 200 {object} H{filename string} "Success"
 // @Router /createFile [post]
-func postfile(g *gin.Context) {
+func CreateFile(g *gin.Context) {
 	filename := g.Query("filename")
 
 	// Create the file.

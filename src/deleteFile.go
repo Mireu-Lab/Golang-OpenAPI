@@ -14,7 +14,7 @@ import (
 // @Param filename query string true "The filename"
 // @Success 200 {string} string "File deleted successfully"
 // @Router /deleteFile [delete]
-func deleteFile(g *gin.Context) {
+func DeleteFile(g *gin.Context) {
 	filename := g.Query("filename")
 
 	os.Remove("file/" + filename)
