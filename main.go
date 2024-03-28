@@ -19,6 +19,6 @@ func main() {
 	r.GET("/helloworld", src.HelloWorld)
 
 	r.GET("/docs/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
-	r.Run(":8001")
+	r.Run(":80")
 
 }
