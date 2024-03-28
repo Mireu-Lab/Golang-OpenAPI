@@ -5,4 +5,4 @@ WORKDIR /app
 
 COPY . .
 
-CMD [ "./run/sample" ]
+CMD [ "./main" ]
