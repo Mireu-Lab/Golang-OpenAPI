@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  golang-openapi:
+    build: ./dev
+    ports:
+      - "2025:22"
+    user: $DOCKER_USER:$DOCKER_GROUP
+    deploy:
+     resources:
+       reservations:
+         devices:
+          - driver: nvidia
+            device_ids: ['0']
+            capabilities: [gpu]
+    volumes:
+      - '../dataset_dir/:/home/Hosting/workspace/dataset_dir:rw'
+      - './:/home/Hosting/workspace:rw'
+      - '~/.ssh:/home/Hosting/.ssh:ro'
+      - '~/.gitconfig:/home/Hosting/.gitconfig:ro'
